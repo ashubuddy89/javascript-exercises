@@ -46,3 +46,27 @@ $("#specials select").parents("form").find("input[type='submit']").addClass("sel
 
 //5. Select the first list item in the #slideshow element; add the class "current" to it, and then add a class of "disabled" to its sibling elements.
 $("#slideshow li:first").addClass("current").siblings("li").addClass("disabled");
+
+//jquery exercise 2.3 Manipulating
+//1. Add five new list items to the end of the unordered list #myList.
+var count = 8;
+for(count = 8; count <= 12; count++){
+	$("#myList").append('<li>List Item '+count+'</li>');
+}
+
+
+//2. Remove the odd list items
+$("li:odd").remove();
+
+//3. Add another h2 and another paragraph to the last div.module
+$("div.module:last").append('<h2>Specials Heading 2</h2><p>Specials Heading 2 New Paragraph</p>');
+
+//4. Add another option to the select element; give the option the value "Wednesday"
+$("#specials form select option:last").before('<option value="wednesday">Wednesday</option>');
+//$("#specials form select").append('<option value="wednesday">Wednesday</option>');
+//$("#specials form select option:eq(1)").after('<option value="wednesday">Wednesday</option>');
+
+//5. Add a new div.module to the page after the last one; put a copy of one of the existing images inside of it.
+var lastModuleDiv = $("div.module:last");
+lastModuleDiv.after('<div class="module">New Div Created with the class name module<br />', $("img:first").clone(), '<br /><br /></div>');
+//$("img:first").clone().appendTo("div.module:last");
