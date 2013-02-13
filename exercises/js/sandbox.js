@@ -22,4 +22,25 @@ var imageLength = $("img[alt]").length;
 //alert(imageLength)
 
 //6. Select all of the odd table rows in the table body.
-$("table tbody tr:odd");
+$("table tbody tr:odd").length;
+
+
+//jquery exercise 2.2 Traversing
+//1. Select all of the image elements on the page; log each image's alt attribute.
+$("img").each(function(index){
+    var thisAlt = $(this).attr("alt");
+    console.log(thisAlt);
+});
+
+//2. Select the search input text box, then traverse up to the form and add a class to the form.
+$("input[type='text'].input_text").parent("form#search").addClass("findForm");
+
+//3. Select the list item inside #myList that has a class of "current" and remove that class from it; add a class of "current" to the next list item.
+$("#myList li.current").next("li").addClass("current").siblings("li").removeClass("current");
+//$("#myList li.current").next("li").addClass("current").prev("li").removeClass("current");
+
+//4. Select the select element inside #specials; traverse your way to the submit button.
+$("#specials select").parents("form").find("input[type='submit']").addClass("selectSubmit");
+
+//5. Select the first list item in the #slideshow element; add the class "current" to it, and then add a class of "disabled" to its sibling elements.
+$("#slideshow li:first").addClass("current").siblings("li").addClass("disabled");
